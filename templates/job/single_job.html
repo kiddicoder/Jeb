@@ -1,0 +1,15 @@
+{% load custom_filters %}
+
+<a href="/jobs/{{ job.id }}">
+    <div class="job-card">
+        <div class="favorite-wrapper">
+            <input type="checkbox" id="favorite-{{ job.id }}" class="favorite-checkbox" {% if job.id in favorite_job_ids %}checked{% endif %}/>
+            <label for="favorite-{{ job.id }}" class="heart-label"></label>
+        </div>
+        <div class="job-date">{{ job.created_at|custom_timesince }}</div>
+        <img src="{{ job.company.logo.url }}" alt="Logo of {{ job.company.name }}" class="company-logo">
+        <div class="job-title">{{ job.title }}</div>
+        <div class="company-name">{{ job.company.name }}</div>
+        <div class="due-date">Due date: {{ job.due_date|date:"M j" }}</div>
+    </div>
+</a>

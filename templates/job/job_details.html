@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="job-detail-wrapper">
+    <div class="job-detail-left">
+        <h1>{{ job.title }}</h1>
+        <a href="/companies/{{ job.company.id }}" class="company-link">
+            <h2>{{ job.company.name }}</h2>
+            <img src="{% static 'images/external_link.svg' %}" alt="Link to {{ job.company.name }} detail site" class="external-link-icon">
+        </a>
+        <div class="detail-info">
+            <div class="info-row"><span class="info-label">Category:</span><div class="info-content">{{ job.category }}</div></div>
+            <div class="info-row"><span class="info-label">Type:</span><div class="info-content">{{ job.get_employment_type_display }}</div></div>
+            <div class="info-row"><span class="info-label">Location:</span><div class="info-content">{{ job.location }}</div></div>
+            <div class="info-row"><span class="info-label">Company Address:</span><div class="info-content">{{ job.company.address }}</div></div>
+            <div class="info-row"><span class="info-label">Starting Date:</span><div class="info-content">{{ job.start_date|date:"M j, Y" }}</div></div>
+            <div class="info-row"><span class="info-label">Due Date:</span><div class="info-content">{{ job.due_date|date:"M j, Y" }}</div></div>
+        </div>
+        <h2>Description</h2>
+        <div class="detail-description">
+            <p>{{ job.description|safe }}</p>
+        </div>
+
+        
+    </div>
+    
+    <div class="job-detail-right">
+        <div class="company-cover-card">
+            <img src="{{ job.company.cover_image.url }}" alt="Cover photo for {{ job.company.name }}" class="company-cover-image">
+        </div>
+    
+    
+
+        {% if application.status == 'submitted' %}
+            <h2>Application Info</h2>
+            <div class="detail-info">
+                <div class="info-row"><span class="info-label">Application date:</span><div class="info-content">{{ application.submitted_at|date:"M j, Y, g:i A" }}</div></div>
+                <div class="info-row"><span class="info-label">Status:</span><div class="info-content">{{ application.get_status_display }}</div></div>
+            </div>
+        {% else %}
+            <a href="{% url 'job_application_contact_info' job.id %}">
+                <div class="apply-button">Apply</div>
+            </a>
+        {% endif %}
+        
+        {% if job.company.user == user %}
+            <div class="detail-btn-delete" data-bs-toggle="modal" data-bs-target="#deleteJobModal{{ job.id }}">
+                Delete Job
+                {% include 'job/delete_job.html' %}
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

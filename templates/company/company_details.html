@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="job-detail-wrapper">
+    <div class="job-detail-left">
+        <h2>{{ company.name }}</h2>
+        <img src="{{ company.logo.url }}" alt="Logo of {{ company.name }}" class="job-detail-company-logo">
+        <div class="detail-info">
+            <div class="info-row"><span class="info-label">Address:</span><div class="info-content">{{ company.address }}</div></div>
+        </div>
+        <h2>Description</h2>
+        <div class="detail-description">
+            <p>{{ company.description|safe }}</p>
+        </div>
+        <h2>All non-due jobs</h2>
+    </div>
+    
+    <div class="job-detail-right">
+        <div class="company-cover-card">
+            <img src="{{ company.cover_image.url }}" alt="Cover photo for {{ company.name }}" class="company-cover-image">
+        </div>
+
+
+
+        {% if company.user == user %}
+            <div class="detail-btn-delete" data-bs-toggle="modal" data-bs-target="#deleteCompanyModal{{ company.id }}">
+                Delete Company
+                {% include 'company/delete_company.html' %}
+            </div>
+        {% endif %}
+
+    </div>
+</div>
+<div class="company-jobs-container">
+    {% for job in jobs %}
+        {% include 'job/single_job.html' with job=job %}
+    {% empty %}
+        <p>There are currently no job listings for this company.</p>
+    {% endfor %}
+</div>
+{% endblock %}

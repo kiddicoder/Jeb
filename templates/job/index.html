@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+    
+<div class="main-container">
+    <div class="filters-card">
+        <h2>Filters</h2>
+        <div class="checkbox-group">
+            <label for="favorites">Favorites</label>
+            <input type="checkbox" id="favorites" class="filter-checkbox" {% if favorites_filter == 'favorites' %}checked{% endif %}>
+        </div>
+        <div class="checkbox-group">
+            <label for="already-applied">Already applied</label>
+            <input type="checkbox" id="already-applied" class="filter-checkbox" {% if applied_filter == 'applied' %}checked{% endif %}>
+        </div>
+        <div class="checkbox-group">
+            <label for="not-applied">Not applied</label>
+            <input type="checkbox" id="not-applied" class="filter-checkbox" {% if applied_filter == 'not_applied' %}checked{% endif %}>
+        </div>
+        <div class="checkbox-group categories-label">
+            <button id="category-btn" class="category-label">Categories</button>
+        </div>
+        <div class="checkbox-group companies-label">
+            <button id="company-btn" class="category-label">Companies</button>
+        </div>
+    </div>
+
+    <div class="jobs-search-container">
+        <div class="job-search-bar">
+            <img src="{% static 'images/search_icon.svg' %}">
+            <input type="search" class="job-form-control" id="search-box" placeholder="Search by name" />
+            <div class="input-group-btn">
+                <button type="button" id="search-btn" class="job-btn btn-default">Search</button>
+            </div>
+        </div>
+
+        <label for="sort_by" class="sort-bar-label">Sort by</label>
+        <div class="sort-bar-container">
+            <select id="sort-by" class="sort-bar-select">
+                <option value="date">Date Created</option>
+                <option value="title">Name</option>
+                <option value="due_date">Due Date</option>
+            </select>
+        </div>
+
+        <div class="jobs-container" id="jobs-list">
+            {% for job in jobs %}
+                {% include 'job/single_job.html' with job=job %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div id="category-modal" class="job-modal">
+    <div class="job-modal-content">
+        <div class="job-modal-header">
+            <h2>Categories</h2>
+            <span class="close">&times;</span>
+        </div>
+        <div id="category-list" class="filter-list"></div>
+        <div class="job-modal-footer">
+            <button id="apply-category-filter" class="save-button">Save</button>
+        </div>
+    </div>
+</div>
+
+<div id="company-modal" class="job-modal">
+    <div class="job-modal-content">
+        <div class="job-modal-header">
+            <h2>Companies</h2>
+            <span class="close">&times;</span>
+        </div>
+        <div id="company-list" class="filter-list"></div>
+        <div class="job-modal-footer">
+            <button id="apply-company-filter" class="save-button">Save</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% load static %}
+
+
+<footer class="footer">
+    <img src="{% static 'images/jeb_logo.png' %}" alt="jeb logo" class="logo">
+    <div class="footer-container-1">
+        <nav class="footer-nav">
+            <a href="{% url 'homepage-index' %}">Homepage</a>
+            <a href="{% url 'job-index' %}">Find Job</a>
+            <a href="{% url 'company-index' %}">Companies</a>
+            <a href="{% url 'your-companies' %}">Your companies</a>
+        </nav>
+    </div>
+    <div class="footer-container-2">
+        <nav class="footer-nav">
+            <a href="{% url 'choose-company-for-job' %}">Post Job</a>
+            <a href="{% url 'your_applications' %}">Your applications</a>
+            <a href="{% url 'profile' %}">Your profile</a>
+        </nav>
+    </div>
+    <br>
+    <br>
+    <div class="footer-copyright">
+        &copy; 2024 Jeb ehf.
+    </div>
+</footer>

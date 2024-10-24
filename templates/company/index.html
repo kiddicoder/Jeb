@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="companies-header">
+    <div class="companies-header-column"></div>
+    <div class="companies-title">Companies</div>
+    <div class="companies-header-column companies-header-right">
+        <a href="{% url 'your-companies' %}" class="btn your-companies-btn login-button">Your companies</a>
+    </div>
+</div>
+<div class="company-search-bar">
+    <img src="{% static 'images/search_icon.svg' %}">
+    <input type="search" class="company-form-control" id="search-box" placeholder="Search by name"/>
+    <div class="input-group-btn">
+        <button type="button" id="search-btn" class="company-btn btn-default">Search</button>
+    </div>
+</div>
+<div class="company-container" id="company-list">
+    {% for company in companies %}
+        {% include 'company/single_company.html' with company=company %}
+    {% endfor %}
+</div>
+
+{% endblock %}

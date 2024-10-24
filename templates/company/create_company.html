@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="forms-container mt-5">
+    <h1>Create Company</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="id_name" class="custom-label">Company Name</label>
+                    {{ form.name }}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="id_address" class="custom-label">Address</label>
+                    {{ form.address }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="id_description" class="custom-label">Description</label>
+                    {{ form.description }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="id_logo" class="custom-label">Logo</label>
+                    {{ form.logo }}
+                    {% if form.logo.errors %}
+                        <div class="form-error">{{ form.logo.errors }}</div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="id_cover_image" class="custom-label">Cover Image</label>
+                    {{ form.cover_image }}
+                    {% if form.cover_image.errors %}
+                        <div class="form-error">{{ form.cover_image.errors }}</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary forms-button">Create Company</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

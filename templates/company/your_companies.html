@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+    <div class="companies-title">Your Companies</div>
+
+    <div class="company-container" id ="company-list">
+
+        {% for company in companies %}
+            {% include 'company/single_company.html' with company=company %}
+        {% endfor %}
+
+
+            <div class="create-company-button-container">
+                <a href="{% url 'create-company' %}">
+                <img src="{% static 'images/add_button.svg' %}" class="add-button" alt="Add reference" data-bs-toggle="modal" data-bs-target="#addReferenceModal">
+                </a>
+            </div>
+
+    </div>
+
+{% endblock %}

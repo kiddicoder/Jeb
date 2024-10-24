@@ -1,0 +1,15 @@
+{% if for_job_posting %}
+    <a href="{% url 'post-job' company.id %}">
+        <div class="company-card">
+            <img src="{{ company.logo.url }}" alt="Logo of {{ company.name }}" class="company-card-logo">
+            <div class="company-card-name">{{ company.name }}</div>
+        </div>
+    </a>
+{% else %}
+    <a href="/companies/{{ company.id }}">
+        <div class="company-card">
+            <img src="{{ company.logo.url }}" alt="Logo of {{ company.name }}" class="company-card-logo">
+            <div class="company-card-name">{{ company.name }}</div>
+        </div>
+    </a>
+{% endif %}

@@ -1,0 +1,29 @@
+<div id="{{ widget.attrs.id }}" class="quill-editor-container">
+    {{ widget.value|safe }}
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var quill = new Quill('#{{ widget.attrs.id }}', {
+            theme: 'snow',
+            modules: {
+                toolbar: [
+                    [{ 'header': [1, 2, false] }],
+                    ['bold', 'italic', 'underline'],
+                    ['link', 'blockquote', 'code-block'],
+                    [{ 'list': 'ordered'}, { 'list': 'bullet' }]
+                ]
+            }
+        });
+
+        // Sync the editor content with the hidden textarea
+        var form = document.querySelector('form');
+        form.onsubmit = function() {
+            var content = document.querySelector('#{{ widget.attrs.id }} .ql-editor').innerHTML;
+            var textarea = document.createElement('textarea');
+            textarea.name = '{{ widget.name }}';
+            textarea.style.display = 'none';
+            textarea.innerHTML = content;
+            form.appendChild(textarea);
+        };
+    });
+</script>

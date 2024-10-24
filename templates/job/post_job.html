@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="forms-container mt-5">
+    <h1>Post Job for {{ company.name }}</h1>
+    <form method="POST" id="post-job-form">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="id_title" class="custom-label">Job Title</label>
+                    {{ form.title }}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="id_category" class="custom-label">Category</label>
+                    {{ form.category }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="id_description" class="custom-label">Description</label>
+                    {{ form.description }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="id_start_date" class="custom-label">Start Date</label>
+                    {{ form.start_date }}
+                    <div id="start-date-error" class="form-error"></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="id_due_date" class="custom-label">Due Date</label>
+                    {{ form.due_date }}
+                    <div id="due-date-error" class="form-error"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="id_employment_type" class="custom-label">Employment Type</label>
+                    {{ form.employment_type }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary forms-button">Post Job</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="{% static 'js/post_job.js' %}"></script>
+{% endblock %}
