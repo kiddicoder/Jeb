@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="login-text">Sign up</div>
+    <form method="post" class="form form-horizontal login-form">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="username" class="form-label custom-label">Username</label>
+            <input type="text" class="form-control custom-input" id="username" name="username" placeholder="Username">
+            {% if form.username.errors %}
+                <ul class="form-error">
+                    {% for error in form.username.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        <div class="mb-3">
+            <label for="password1" class="form-label custom-label">Password</label>
+            <input type="password" class="form-control custom-input" id="password1" name="password1" placeholder="Password">
+            {% if form.password1.errors %}
+                <ul class="form-error">
+                    {% for error in form.password1.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        <div class="mb-3">
+            <label for="password2" class="form-label custom-label">Confirm Password</label>
+            <input type="password" class="form-control custom-input" id="password2" name="password2" placeholder="Confirm Password">
+            {% if form.password2.errors %}
+                <ul class="form-error">
+                    {% for error in form.password2.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        <div class="register-text">
+            <span class="account-text">Already have an account? </span><a href="{% url 'login' %}" class="register-link"> Login</a>
+        </div>
+        <input type="submit" class="btn btn-primary login-button" value="Sign Up" />
+    </form>
+{% endblock %}

@@ -1,0 +1,1529 @@
+{% load static %}
+
+/* Container Styles */
+.container {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0 auto;
+    max-width: 1450px;
+}
+
+/* Link Styles */
+a {
+  text-decoration: none;
+}
+
+/* Paragraph Styles */
+p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+/* Global Font Styles */
+body, input, button, label {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Login Form Styles */
+.login-form {
+    max-width: 350px;
+    margin: auto;
+}
+
+.login-text {
+    color: #5F7EED;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.custom-label {
+    color: #5F7EED;
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+.custom-input {
+    background-color: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    border-radius: 15px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05), 0px 0px 8px rgba(0, 0, 0, 0.05);
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #868686;
+    height: 52px;
+}
+
+.custom-textbox {
+    height: 500px;
+}
+
+.custom-input::placeholder {
+    color: #868686;
+    font-weight: 300;
+}
+
+.form-error {
+    color: red;
+    margin-top: 10px;
+}
+
+/* Custom Quill Editor Styles */
+.custom-quill-container {
+    background-color: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    border-radius: 15px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05), 0px 0px 8px rgba(0, 0, 0, 0.05);
+    font-size: 16px;
+    font-weight: 300;
+    color: #868686;
+    padding: 10px 0;
+}
+
+.custom-quill .ql-container {
+    border: none;
+}
+
+.custom-quill .ql-editor {
+    padding: 10px 20px;
+    border: none;
+    min-height: 200px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #868686;
+}
+
+.custom-quill .ql-toolbar {
+    border: none;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+/*Custom Checkbox Styles */
+.custom-checkbox {
+    background-color: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05), 0px 0px 8px rgba(0, 0, 0, 0.05);
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    top: 5px;
+    left: 5px;
+}
+
+.custom-checkbox input {
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.custom-checkbox input:checked + .checkmark {
+    background-color: #FFFFFF;
+    border: 1px solid #EEEEEE;
+}
+
+.custom-checkbox .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 2px;
+    background-color: #FFFFFF;
+}
+
+.custom-checkbox .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.custom-checkbox input:checked + .checkmark:after {
+    display: block;
+}
+
+.custom-checkbox .checkmark:after {
+    left: 6px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid #868686;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Login Button Styles */
+.login-button {
+    margin-top: 40px;
+    border-radius: 25px;
+    width: 100%;
+    height: 45px;
+    background-color: #5F7EED;
+    border: none;
+    color: white;
+}
+
+.login-button:hover {
+    background-color: #4070F4;
+    color: #FFFFFF;
+}
+
+/* Input Focus Styles */
+.custom-input:focus {
+    border-color: #5F7EED;
+    box-shadow: 0 0 0 0.2rem rgba(95, 126, 237, 0.25);
+}
+
+/* Register Link Styles */
+.register-link {
+    color: #5F7EED;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+/* Account Text Styles */
+.account-text {
+    font-weight: 300;
+    font-size: 18px;
+}
+
+/* Profile Image Styles */
+.profile-profile-image {
+    cursor: pointer;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-image {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Profile Wrapper Styles */
+.profile-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+    color: #000;
+}
+
+.profile-left, .profile-right {
+    flex: 1;
+    padding: 30px 30px 0;
+    min-width: 400px;
+}
+
+.profile-wrapper h2 {
+    margin: 10px 0;
+    font-size: 30px;
+    font-weight: 400;
+    color: #5F7EED;
+}
+
+/* Modal Styles */
+.modal-lg {
+    max-width: 50%;
+    border-radius: 50%;
+}
+
+.modal-content {
+    border-radius: 20px;
+    border: none;
+}
+
+.modal-header, .modal-footer {
+    border: none;
+}
+
+.modal-title {
+    color: #5F7EED;
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+    width: 100%;
+}
+
+.modal-body {
+    color: black;
+}
+
+.btn-close {
+    color: #868686;
+}
+
+/* Primary Button Styles */
+.btn-primary {
+    background-color: #5F7EED;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.btn-primary:hover {
+    background-color: #4070F4;
+    color: #FFFFFF;
+}
+
+/* Secondary Button Styles */
+.btn-secondary {
+    background-color: #868686;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.btn-secondary:hover {
+    background-color: #6E6E6E;
+    color: #FFFFFF;
+}
+
+/* Form Group Styles */
+.form-group {
+    margin: 10px;
+}
+
+/* Country Select Flag Styles */
+.country-select-flag {
+    display: none;
+}
+
+/* Add Button Styles */
+.add-button {
+    cursor: pointer;
+}
+
+/* List Item Styles */
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 20px auto 0;
+    font-family: 'Inter', sans-serif;
+    color: #000;
+    cursor: pointer;
+}
+
+.list-item:hover {
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05), 0px 0px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Delete Button Styles */
+.btn-delete {
+    background-color: #de2b46;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 300;
+    color: white;
+
+}
+
+.btn-delete:hover {
+    background-color: #e11739;
+    color: white;
+}
+
+/* List Left and Right Styles */
+.list-left, .list-right {
+    flex: 1;
+}
+
+.list-left p, .list-right p{
+        line-height: 1;
+}
+
+.list-left {
+    text-align:left;
+}
+
+.list-right {
+    text-align:right;
+}
+
+.list-name{
+    font-weight: 600;
+    font-size: 18px;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #EEEEEE;
+    padding: 10px 120px 10px 50px;
+
+}
+
+.navbar-brand, .nav-link {
+    color: #5F7EED !important;
+}
+
+.navbar-brand {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    font-size: 2.5em;
+    padding-left: 30px;
+    padding-right: 0;
+}
+
+.navbar-brand img {
+    margin-left: 16px;
+    height: 60px;
+}
+
+.nav-link {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 1.4em;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.center-nav {
+    flex-grow: 1;
+    justify-content: center;
+}
+
+
+/* Jobs Styles */
+.job-card {
+    width: 312px;
+    height: 364px;
+    border-radius: 25px;
+    margin: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    transition: box-shadow 0.3s;
+    box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+}
+
+.job-date {
+    color: #767676;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.company-logo {
+    height: 120px;
+    align-self: center;
+    margin-top: 34px;
+    margin-bottom: 20px;
+}
+
+.job-title {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+    text-align: center;
+}
+
+.company-name {
+    color: #5F7EED;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.due-date {
+    color: #767676;
+    font-weight: 300;
+    font-size: 16px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.job-card:hover {
+    box-shadow: 0 8px 32px rgba(149, 157, 165, 0.3);
+}
+
+.jobs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.jobs-search-container {
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+.employment-type {
+    text-align: center;
+}
+
+/* Favorite Wrapper Styles*/
+.favorite-wrapper {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+}
+
+.favorite-checkbox {
+    display: none;
+}
+
+.heart-label {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    background-image: url('../images/unfilled-heart-icon.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.favorite-checkbox:checked + .heart-label {
+    background-image: url('../images/filled-heart-icon.svg');
+}
+
+/* Main Container Styles */
+.main-container {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0;
+    max-width: 1450px;
+}
+
+/* Filters Card Styles */
+.filters-card {
+    width: 312px;
+    height: auto;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 25px;
+    background: #FFFFFF;
+    box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+}
+
+.filters-card h2 {
+    color: #5F7EED;
+    font-size: 26px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.checkbox-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 300;
+    color: #767676;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.checkbox-group label {
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.filter-checkbox {
+    appearance: none;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+    border: 2px solid #5F7EED;
+    border-radius: 6px;
+    background-color: #fff;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+}
+
+.filter-checkbox:checked {
+    background-color: rgba(95, 126, 237, 0.5);
+}
+
+.filter-checkbox + label {
+    padding-left: 10px;
+}
+
+.categories-label, .companies-label {
+    font-weight: 500;
+    color: #5F7EED;
+}
+
+/* Forms Container Styles*/
+.forms-container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.forms-container h1 {
+    margin: 10px 0;
+    font-size: 40px;
+    font-weight: 300;
+    color: #5F7EED;
+}
+
+.forms-button {
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+/* Company Jobs Container Styles */
+.company-jobs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 80%;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.company-jobs-container p {
+    margin-left: 30px;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+/* Job Detail Wrapper Styles */
+.job-detail-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+    color: #000;
+}
+
+.job-detail-left, .job-detail-right {
+    flex: 1;
+    padding: 30px 30px 0;
+    min-width: 400px;
+}
+
+.job-detail-left h1 {
+    margin: 10px 0;
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.job-detail-left h2 {
+    margin: 10px 0;
+    font-size: 30px;
+    font-weight: 400;
+    color: #5F7EED;
+}
+
+.job-detail-right h2 {
+    margin: 10px 0;
+    font-size: 30px;
+    font-weight: 400;
+    color: #5F7EED;
+}
+
+.company-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.external-link-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.job-detail-left p {
+    margin-bottom: 50px;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+.job-detail-company-logo {
+
+    margin: 10px auto;
+    height: 90px;
+}
+
+.detail-description {
+    margin-top:-35px;
+    word-break: break-word;
+
+}
+
+.detail-info {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    word-break: break-word;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.info-label {
+    flex-basis: 40%;
+    text-align: left;
+}
+
+.info-content {
+    flex-basis: 60%;
+    text-align: right;
+    font-weight: 300;
+}
+
+.detail-btn-delete {
+    background-color: #de2b46;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 300;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.detail-btn-delete:hover {
+    background-color: #e11739;
+    color: white;
+}
+
+/* Company Cover Card Styles */
+.company-cover-card {
+    width: 100%;
+    height: 364px;
+    border-radius: 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+    overflow: hidden;
+    position: relative;
+}
+
+
+.company-cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Apply Button Styles */
+.apply-button {
+    height: 52px;
+    width: 100%;
+    background-color: #5F7EED;
+    border-radius: 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05), 0 0 8px rgba(0, 0, 0, 0.05);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    border: none;
+    line-height: 52px;
+    cursor: pointer;
+    margin-top: 40px;
+}
+
+/* Companies styles */
+.create-company-button-container {
+    width: 312px;
+    height: 364px;
+    margin: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.company-card {
+    width: 312px;
+    height: 364px;
+    border-radius: 25px;
+    margin: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    transition: box-shadow 0.3s;
+    box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+}
+
+.company-search-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 1056px;
+    margin: auto;
+}
+
+.company-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 1056px;
+    margin: auto;
+}
+
+.companies-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto 20px auto;
+    width: 72%;
+}
+
+.companies-header-column {
+    flex: 1;
+}
+
+.companies-title {
+    flex: 1;
+    margin: 10px 0;
+    font-size: 40px;
+    font-weight: 400;
+    color: #5F7EED;
+    text-align: center;
+}
+
+.companies-header-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.your-companies-btn {
+    width: 70%;
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.company-card-logo {
+    height: 120px;
+    align-self: center;
+    margin-top: 60px;
+}
+
+.company-card-name {
+    margin-top: 40px;
+    color: #5F7EED;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.company-card:hover {
+    box-shadow: 0 8px 32px rgba(149, 157, 165, 0.3);
+}
+
+.profile-image {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+/* Footer Styles */
+.footer {
+    background: linear-gradient(to bottom, white 18%, #f1f8f7 18%, #f1f8f7 80%, white 80%);
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 270px;
+    position: relative;
+    margin-top: 260px;
+}
+
+.footer-container-1, .footer-container-2 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-container-1 {
+    margin-top: 10px;
+    padding: 10px 10px;
+}
+
+.footer-container-2 {
+    padding: 10px 10px;
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.footer-nav a {
+    color: #5F7EED;
+    text-decoration: none;
+    margin: 0 35px;
+    font-size: 18px;
+    line-height: 24px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+.footer-nav a:hover {
+    color: #2a2a2a;
+}
+
+.footer img.logo {
+    margin: 0 auto;
+    height: 65px;
+    width: 65px;
+}
+
+.footer-copyright {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #686868;
+    position: absolute;
+    bottom: 15px;
+    left: 350px;
+}
+
+
+/* Post Job Styles */
+.post-job-container {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.post-job-title {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.post-job-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-job-group {
+    margin-bottom: 15px;
+}
+
+.post-job-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #5F7EED;
+}
+
+.post-job-input, .post-job-textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.post-job-textarea {
+    height: 120px;
+}
+
+.post-job-checkbox-label {
+    display: flex;
+    align-items: center;
+}
+
+.post-job-checkbox {
+    margin-right: 10px;
+}
+
+.post-job-submit {
+    background-color: #5F7EED;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.post-job-submit:hover {
+    background-color: #4070F4;
+}
+
+/* Confirmation Screen Styles */
+.confirmation-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.confirmation-container h1 {
+    color: #333;
+    font-size: 24px;
+}
+
+.confirmation-container h2 {
+    color: #555;
+    font-size: 20px;
+}
+
+.confirmation-container p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.confirmation-container .confirmation-image {
+    margin: 20px 0;
+}
+
+.confirmation-container .btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.confirmation-container .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.success-image {
+    width: 250px;
+    height: 250px;
+}
+
+
+/* Homepage Styles */
+.homepage-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 80%;
+    gap: 10px;
+}
+
+.header-text {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.highlight {
+    color: #4ac1f7;
+}
+
+.header-text h1 {
+    font-size: 66px;
+    color: #5F7EED;
+    font-weight: bold ;
+}
+
+.info-block h2 {
+    font-size: 23px;
+    color: #5F7EED;
+}
+
+.info-block, .homepage-header p {
+    font-size: 20px;
+    color: #767676;
+    font-weight: 300;
+}
+
+.header-image {
+    flex-shrink: 0;
+    width: 300px;
+    height: 370px;
+}
+
+.button-container-hero {
+    text-align: center;
+    margin: 0 auto 20px;
+    max-width: 95%;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.action-button {
+    width: 45%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 30px;
+    background-color: #5F7EED;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 300;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05), 0px 0px 8px rgba(0, 0, 0, 0.05);
+}
+
+.info-section {
+    background-color: #5F7EED0D;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 60px 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.info-block {
+    width: 30%;
+    text-align: center;
+}
+
+.info-block img {
+    width: 60px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.text-block-curved-section {
+    padding: 0 30px;
+}
+
+.curved-section {
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 150px 30%;
+    position: relative;
+    width: 100vw;
+    margin-left: -50vw;
+    left: 50%;
+    right: 50%;
+}
+
+.curved-section h3 {
+    width: max-content;
+    font-size: 40px;
+    margin-bottom: 2px;
+}
+
+.curved-section p {
+    font-weight: lighter;
+    width: fit-content;
+    font-size: 20px;
+    color: white;
+    text-align: left;
+}
+
+.start-looking-button {
+    background-color: #2ccbbb;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin-top: 20px;
+    border-radius: 20px;
+    font-size: 18px;
+    padding: 7px 25px;
+    width: 220px;
+    text-align: center;
+}
+
+.img-unlock-potential {
+    width: 65%;
+    position: relative;
+    top: 50px;
+    left: 220px;
+}
+
+/* Post Job Styles */
+.post-job {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    padding: 170px;
+    width: 97%;
+    border-radius: 10px;
+    margin-left: 12%;
+}
+
+.post-job-img {
+    width: 700px;
+    height: auto;
+    margin-right: 30px;
+    margin-left: -220px ;
+}
+
+.post-job h3, .post-job p {
+    margin: 0;
+    text-align: left;
+}
+
+.post-job h3 {
+    color: #5F7EED;
+    font-size: 40px;
+}
+
+.post-job p {
+    font-size: 20px;
+    color: #767676;
+    width: 83%;
+    padding-top: 25px;
+}
+
+.post-job-button {
+    background-color: #5F7EED;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 220px;
+    margin-top: 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    padding: 7px 25px;
+    align-self: self-start; 
+    width: 220px;
+    text-align: center;
+}
+
+
+/* Company Styles*/
+.company-search-bar {
+    padding: 7px 7px 7px 40px;
+    width: 72%;
+    margin: auto;
+    display: flex;
+    border-radius: 30px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05), 0px 0px 8px rgba(0, 0, 0, 0.05);
+}
+
+.company-search-bar img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.company-form-control {
+    flex-grow: 1;
+    border: none;
+    background: transparent;
+    font-weight: 300;
+    margin-left: 20px;
+    color: black;
+}
+.company-form-control:focus {
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+}
+.company-form-control::-webkit-search-cancel-button {
+    display: none;
+}
+.company-btn.btn-default {
+    padding: 10px 20px;
+    background-color: #5F7EED;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: -5px;
+    border-radius: 50px;
+}
+.company-btn.btn-default:focus {
+    outline: none;
+}
+
+/* Find Job Filter and Search Styles */
+.job-search-bar {
+    padding: 7px 7px 7px 25px;
+    width: 97%;
+    margin: auto;
+    display: flex;
+    border-radius: 30px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05), 0px 0px 8px rgba(0, 0, 0, 0.05);
+}
+
+.job-search-bar img {
+    width: 20px;
+    height: 20px;
+    margin-top: 12px;
+}
+.job-form-control {
+    flex-grow: 1;
+    border: none;
+    background: transparent;
+    font-weight: 300;
+    margin-left: 20px;
+    color: black;
+}
+.job-form-control:focus {
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+}
+.job-form-control::-webkit-search-cancel-button {
+    display: none;
+}
+.job-btn.btn-default {
+    padding: 10px 20px;
+    background-color: #5F7EED;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: -5px;
+    border-radius: 50px;
+}
+.job-btn.btn-default:focus {
+    outline: none;
+}
+
+.sort-bar-container {
+    display: flex;
+    align-items: center;
+    padding: 7px 14px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05), 0px 0px 8px rgba(0, 0, 0, 0.05);
+    width: 280px;
+    margin: 7px 14px;
+    margin-top: 10px;
+}
+
+.sort-bar-label {
+    color: #5F7EED;
+    font-size: 18px;
+    font-weight: 300;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.sort-bar-select {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 300;
+    border-radius: 10px;
+    border: none;
+    background-color: #FFFFFF;
+    color: #8D8D8D;
+    margin-left: 0;
+}
+
+.category-label {
+    font-weight: 500;
+    color: #5F7EED;
+    border: none;
+    background-color: transparent;
+    padding-left: 0px;
+}
+
+/* Modal and Filter Item Styles */
+.job-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.job-modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 25px;
+    width: 717px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.job-modal-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 10px;
+}
+
+.job-modal-header h2 {
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+    color: #5F7EED;
+}
+
+.close {
+    position: absolute;
+    left: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    justify-content: left;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.filter-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.filter-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    background-color: #f8f8f8;
+}
+
+.filter-item.selected {
+    background-color: #5F7EED;
+    color: white;
+    border-color: #5F7EED;
+}
+
+.filter-item .icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.filter-item .icon.add {
+    background: url("/static/images/plus-icon.svg") no-repeat center center;
+    background-size: contain;
+}
+
+.filter-item .icon.check {
+    background: url("/static/images/check-icon1.svg") no-repeat center center;
+    background-size: contain;
+    display: none;
+}
+
+.filter-item.selected .icon.add {
+    display: none;
+}
+
+.filter-item.selected .icon.check {
+    display: block;
+}
+
+.job-modal-footer {
+    text-align: center;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.search-category {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+.save-button {
+    background-color: #5F7EED;
+    color: white;
+    padding: 10px 60px;
+    border: none;
+    text-align: center;
+    border-radius: 25px;
+    cursor: pointer;
+    justify-content: center;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.save-button:hover {
+    background-color: #4070F4;
+}
+

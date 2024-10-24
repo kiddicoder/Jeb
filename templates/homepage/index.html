@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="homepage-header">
+    <div class="header-text">
+        <h1>Unlock <span class="highlight">opportunities</span></h1>
+        <h1>Discover jobs</h1>
+        <h1>near and far</h1>
+        <p>Find the perfect job at Jeb! Part-time gigs or full-time careers, your adventure starts here. Dive into our diverse listings and discover more than just a job - find your future!</p>
+    </div>
+    <img src="static/images/homepage_shaking.svg" alt="Guys shaking hands" class="header-image">
+</div>
+<div class="button-container-hero">
+    <div class="button-container">
+        <a class="action-button" href="{% url 'job-index' %}">Find Job</a>
+        <a class="action-button" href="{% url 'choose-company-for-job' %}">Post Job</a>
+    </div>    
+</div>
+<div class="jobs">
+    {% for job in jobs %}
+        {% include 'job/single_job.html' with job=job %}
+    {% endfor %}
+</div>    
+<div class="info-section">
+    <div class="info-block">
+        <img src="static/images/homepage_mid1.svg" alt="Image 1" class="homepage-mid">
+        <h2>Take the step</h2>
+        <p>Follow your passion. Find the right job for you</p>
+    </div>
+    <div class="info-block">
+        <img src="static/images/homepage_mid2.svg" alt="Image 2" class="homepage-mid">
+        <h2>Earn money</h2>
+        <p>Unlock your financial potential</p>
+    </div>
+    <div class="info-block">
+        <img src="static/images/homepage_mid3.svg" alt="Image 3" class="homepage-mid">
+        <h2>Need help?</h2>
+        <p>Post a job advertisement. Find employees</p>
+    </div>
+</div>
+<div class="curved-section" style="background: url('{% static 'images/homepage_curves.svg' %}'); background-size: cover;">
+    <div class="text-block-curved-section">
+        <h3>Unlock Your Potential,</h3>
+        <h3>Land Your Dream Job!</h3>
+        <p>Discover exciting career opportunities tailored to your skills and interests.</p>
+        <p>Find your perfect match trouble-free with our trusted job search platform.</p>
+        <a href="{% url 'job-index' %}" class="start-looking-button">Start looking</a>
+    </div>
+    <img src="static/images/people_talking.svg" alt="Unlock your potential" class="img-unlock-potential">
+</div>
+<div class="post-job">
+    <img src="static/images/applicants_waiting.webp" alt="Hiring cartoon" class="post-job-img">
+    <div class="text-block-post-job">
+        <h3>Attract Top Talent, Fill</h3>
+        <h3>Your Positions with Ease!</h3>
+        <p>Find the perfect candidate to join your team effortlessly. Post your job openings and connect with qualified professionals through our trusted recruitment platform.</p>
+        <a href="{% url 'choose-company-for-job' %}" class="post-job-button">Post Job</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="login-text">Log in</div>
+    <form method="post" class="form form-horizontal login-form">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="username" class="form-label custom-label">Username</label>
+            <input type="text" class="form-control custom-input" id="username" name="username" placeholder="Username">
+            {% if form.username.errors %}
+                <div class="form-error" >{{ form.username.errors }}</div>
+            {% endif %}
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label custom-label">Password</label>
+            <input type="password" class="form-control custom-input" id="password" name="password" placeholder="Password">
+            {% if form.password.errors %}
+                <div class="form-error">{{ form.password.errors }}</div>
+            {% endif %}
+        </div>
+        {% if form.non_field_errors %}
+            <div class="form-error">{{ form.non_field_errors }}</div>
+        {% endif %}
+        <div class="register-text">
+            <span class="account-text">Don't have an account? </span><a href="{% url 'register' %}" class="register-link"> Register</a>
+        </div>
+        <input type="submit" class="btn btn-primary login-button" value="Login" />
+    </form>
+{% endblock %}

@@ -1,0 +1,55 @@
+<div class="modal fade" id="addReferenceModal" tabindex="-1" aria-labelledby="addReferenceModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addReferenceModalLabel">Add Reference</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="{% url 'add_reference' %}">
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="id_name" class="custom-label">Name</label>
+                {{ reference_form.name }}
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="id_role" class="custom-label">Role</label>
+                {{ reference_form.role }}
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="id_email" class="custom-label">Email</label>
+                {{ reference_form.email }}
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="id_phone_number" class="custom-label">Phone Number</label>
+                {{ reference_form.phone_number }}
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="id_can_be_contacted" class="custom-label">Can be contacted </label>
+                {{ reference_form.can_be_contacted }}
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Add Reference</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

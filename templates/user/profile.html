@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+{% include 'user/edit_contact.html' %}
+{% include 'user/edit_bio.html' %}
+{% include 'user/add_reference.html' %}
+{% include 'user/add_experience.html' %}
+
+<div class="profile-wrapper">
+    <div class="profile-left">
+        <form id="profile-picture-form" method="POST" enctype="multipart/form-data" action="{% url 'update_profile_picture' %}">
+            {% csrf_token %}
+            {{ profile_picture_form.non_field_errors }}
+            {{ profile_picture_form.errors }}
+
+            <div class="form-group">
+                {% if user.profile.profile_picture %}
+                    <img src="{{ user.profile.profile_picture.url }}" id="profile-picture" class="profile-profile-image" alt="profile picture">
+                {% else %}
+                    <img src="{% static 'images/default_profile_picture.svg' %}" id="profile-picture" class="profile-profile-image" alt="default profile picture">
+                {% endif %}
+                <input type="file" name="profile_picture" id="profile_picture" class="form-control" style="display: none;">
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Bio</h2>
+                <img src="{% static 'images/edit_icon.svg' %}" id="edit-bio-button" class="edit-icon" alt="Edit Bio" data-bs-toggle="modal" data-bs-target="#editBioModal" style="cursor: pointer;">
+            </div>
+            <div class="detail-info">
+                <p>{{ user.profile.bio }}</p>
+            </div>
+        </form>
+        
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Experiences</h2>
+            <img src="{% static 'images/add_button.svg' %}" class="add-button" alt="Add experience" data-bs-toggle="modal" data-bs-target="#addExperienceModal">
+        </div>
+        <div class="experiences">
+            {% for experience in experiences %}
+                <div class="list-item" data-bs-toggle="modal" data-bs-target="#deleteExperienceModal{{ experience.id }}">
+                    <div class="list-left">
+                        <p class="list-name">{{ experience.role }}</p>
+                        <p>{{ experience.company_name }}</p>
+                    </div>
+                    <div class="list-right">
+                        <p></p>
+                        <p>{{ experience.start_date|date:"M Y" }} - {{ experience.end_date|date:"M Y" }}</p>
+                    </div>
+
+                    {% include 'user/delete_experience.html' %}
+                    
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="profile-right">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Contact Info</h2>
+            <img src="{% static 'images/edit_icon.svg' %}" id="edit-contact-button" class="edit-icon" alt="Edit Contact Info" data-bs-toggle="modal" data-bs-target="#editContactModal" style="cursor: pointer;">
+        </div>
+        <div class="detail-info">
+            <div class="info-row"><span class="info-label">Full name:</span><div class="info-content">{{ contact_info.full_name }}</div></div>
+            <div class="info-row"><span class="info-label">Birthdate:</span><div class="info-content">{{ contact_info.birthdate|date:"M j, Y" }}</div></div>
+            <div class="info-row"><span class="info-label">Phone number:</span><div class="info-content">{{ contact_info.phone_number }}</div></div>
+            <div class="info-row"><span class="info-label">Street name:</span><div class="info-content">{{ contact_info.street_name }}</div></div>
+            <div class="info-row"><span class="info-label">House number:</span><div class="info-content">{{ contact_info.house_number }}</div></div>
+            <div class="info-row"><span class="info-label">City:</span><div class="info-content">{{ contact_info.city }}</div></div>
+            <div class="info-row"><span class="info-label">Postal code:</span><div class="info-content">{{ contact_info.postal_code }}</div></div>
+            <div class="info-row"><span class="info-label">Country:</span><div class="info-content">{{ contact_info.country.name }}</div></div>
+        </div>
+        
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>References</h2>
+            <img src="{% static 'images/add_button.svg' %}" class="add-button" alt="Add reference" data-bs-toggle="modal" data-bs-target="#addReferenceModal">
+        </div>
+    
+        <div class="references">
+            {% for reference in references %}
+                <div class="list-item" data-bs-toggle="modal" data-bs-target="#deleteReferenceModal{{ reference.id }}">
+                    <div class="list-left">
+                        <p class="list-name">{{ reference.name }}</p>
+                        <p>{{ reference.role }}</p>
+                        <p>{{ reference.can_be_contacted|yesno:"Can be contacted,Do not contact" }}</p>
+                    </div>
+                    <div class="list-right">
+                        <p>{{ reference.email }}</p>
+                        <p>{{ reference.phone_number }}</p>
+                    </div>
+
+                    {% include 'user/delete_reference.html' %}
+                    
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'js/profile.js' %}"></script>
+{% endblock %}
